@@ -232,6 +232,9 @@ q<!DOCTYPE html>
             background: linear-gradient(90deg, transparent, #4ecdc4, transparent);
             margin: 40px 0;
         }
+        .download-section .download-btn + .download-btn {
+  margin-top: 18px;
+}
     </style>
 </head>
 <body>
@@ -283,30 +286,34 @@ q<!DOCTYPE html>
             참여하시겠습니까?
         </div>
 
-        <div class="warning">
-            [ 살아남는 최후의 1인에겐<br>100억을 주겠다. ]
-        </div>
+<div class="warning">
+  [ 살아남는 최후의 1인에겐<br>100억을 주겠다. ]
+</div>
 
-        <div class="decorative-line"></div>
+<div class="decorative-line"></div>
 
-        <div class="download-section">
-            <h3>🎭 캐릭터 다운로드</h3>
-            <div class="download-buttons">
-                <a href="https://t1.daumcdn.net/cafeattach/1P7bK/f7032322cb4e1a2ba67d3ac6bcabc6fb996e8ad2" class="download-btn">
-                    📥 V2 캐릭터 다운로드
-                </a>
-                <a href="https://t1.daumcdn.net/cafeattach/1P7bK/42baab0a02bdbcb46ec39fc94b2b9f4235c36882" class="download-btn v3">
-                    📥 V3 캐릭터 다운로드
-                </a>
-            </div>
-            <div class="note">
-                ⚠️ 리수 사용시 v3 다운로드 필수<br>
-               ⚠️ 실리는 v2 파일
+<div class="download-section">
+  <h3>🎭 캐릭터 다운로드</h3>
 
-            </div>
-        </div>
-    </div>
-    <style>
+  <a
+    href="https://t1.daumcdn.net/cafeattach/1P7bK/42baab0a02bdbcb46ec39fc94b2b9f4235c36882"
+    class="download-btn v3"
+    download
+  >
+    📥 캐릭터 다운로드
+  </a>
+
+  <a
+    href="여기에_GITHUB_JPEG_RAW_주소"
+    class="download-btn image-file"
+    download
+  >
+    📎 JPEG 첨부파일 다운로드
+  </a>
+</div>
+</div>
+
+<style>
 footer, .footer, .site-footer, #footer {
   display: none !important;
 }
