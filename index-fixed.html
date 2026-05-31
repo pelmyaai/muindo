@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>무인도 서바이벌 - 초대장</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nanum Myeongjo', serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e0e0e0;
+            min-height: 100vh;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 60px 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .letter-header {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #d4af37;
+            margin-bottom: 40px;
+            font-style: italic;
+            text-align: center;
+            padding: 20px;
+            background: rgba(212, 175, 55, 0.1);
+            border-left: 3px solid #d4af37;
+            border-right: 3px solid #d4af37;
+        }
+
+        h1 {
+            font-size: 42px;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #4ecdc4;
+            text-shadow: 0 0 20px rgba(78, 205, 196, 0.5);
+            letter-spacing: 2px;
+        }
+
+        .island-intro {
+            background: linear-gradient(135deg, rgba(78, 205, 196, 0.1) 0%, rgba(255, 107, 107, 0.1) 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border: 1px solid rgba(78, 205, 196, 0.3);
+        }
+
+        .island-intro h2 {
+            color: #4ecdc4;
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .island-intro p {
+            line-height: 1.8;
+            font-size: 17px;
+            margin-bottom: 15px;
+            color: #e0e0e0;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(78, 205, 196, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            border-color: #4ecdc4;
+        }
+
+        .feature-icon {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .question {
+            text-align: center;
+            font-size: 32px;
+            color: #4ecdc4;
+            margin: 50px 0 30px 0;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .warning {
+            text-align: center;
+            font-size: 28px;
+            color: #ff6b6b;
+            margin: 50px 0;
+            padding: 30px;
+            background: rgba(255, 107, 107, 0.1);
+            border-radius: 15px;
+            font-family: 'Creepster', cursive;
+            text-shadow: 0 0 10px rgba(255, 107, 107, 0.8), 0 0 20px rgba(255, 107, 107, 0.5);
+            letter-spacing: 3px;
+            border: 2px solid rgba(255, 107, 107, 0.3);
+            animation: flicker 3s infinite;
+        }
+
+        @keyframes flicker {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+            25%, 75% { opacity: 0.9; }
+        }
+
+        .download-section {
+            margin-top: 60px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            border: 1px solid rgba(78, 205, 196, 0.2);
+            text-align: center;
+        }
+
+        .download-section h3 {
+            color: #4ecdc4;
+            font-size: 26px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 20px 40px;
+            background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+            color: #1a1a2e;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(108, 92, 231, 0.3);
+            border: 2px solid transparent;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, #b2a9ff 0%, #a29bfe 100%);
+            box-shadow: 0 15px 40px rgba(108, 92, 231, 0.5);
+        }
+
+        .decorative-line {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #4ecdc4, transparent);
+            margin: 40px 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            .letter-header {
+                font-size: 16px;
+            }
+
+            .question {
+                font-size: 24px;
+            }
+
+            .warning {
+                font-size: 20px;
+                padding: 20px;
+            }
+
+            .download-btn {
+                width: 100%;
+                max-width: 320px;
+                padding: 18px 24px;
+            }
+        }
+
+        footer, .footer, .site-footer, #footer {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="letter-header">
+            무인도 초대장입니다...<br>
+            7일 안에 초대를 받아들이지 않으면<br>
+            당신은 게임에 강제로 참여하게 됩니다.
+        </div>
+
+        <h1>무인도 서바이벌</h1>
+
+        <div class="decorative-line"></div>
+
+        <div class="island-intro">
+            <h2>낙원으로의 초대</h2>
+            <p>
+                수평선 끝에 위치한 신비로운 섬. 끝없이 펼쳐진 에메랄드빛 바다와 하얀 모래사장,
+                울창한 열대림이 어우러진 천국 같은 곳입니다.
+            </p>
+            <p>
+                프라이빗 비치, 최고급 리조트 시설, 신선한 열대 과일과 해산물이 가득한
+                무인도 휴양지에서 당신만의 특별한 시간을 보내세요.
+            </p>
+
+            <div class="features">
+                <div class="feature-item">
+                    <div class="feature-icon">🌴</div>
+                    <div>천연 열대림</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🏖️</div>
+                    <div>프라이빗 비치</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🌊</div>
+                    <div>맑은 에메랄드 바다</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🏝️</div>
+                    <div>럭셔리 시설</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="decorative-line"></div>
+
+        <div class="question">
+            참여하시겠습니까?
+        </div>
+
+        <div class="warning">
+            [ 살아남는 최후의 1인에겐<br>100억을 주겠다. ]
+        </div>
+
+        <div class="decorative-line"></div>
+
+        <div class="download-section">
+            <h3>🎭 캐릭터 다운로드</h3>
+
+            <a
+                href="character.jpeg"
+                class="download-btn"
+                download="character.jpeg"
+            >
+                📥 캐릭터 다운로드
+            </a>
+        </div>
+    </div>
+</body>
+</html>
